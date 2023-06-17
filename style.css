@@ -1,0 +1,477 @@
+/*---------1.Сброс CSS(START)--------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+button {
+  padding: 0;
+  border: none;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*---------1.Сброс CSS(END)--------*/
+/*---------2.Типовые елементы(START)--------*/
+@font-face {
+  font-family: MuseoSansCyrl;
+  src: local("MuseoSansCyrl-300"),
+    url("../fonts/MuseoSansCyrl-300.woff2") format("woff2"),
+    url("../fonts/MuseoSansCyrl-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: MuseoSansCyrl;
+  src: local("MuseoSansCyrl-100"),
+    url("../fonts/MuseoSansCyrl-100.woff2") format("woff2"),
+    url("../fonts/MuseoSansCyrl-100.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: MuseoSansCyrl;
+  src: local("MuseoSansCyrl-700"),
+    url("../fonts/MuseoSansCyrl-700.woff2") format("woff2"),
+    url("../fonts/MuseoSansCyrl-700.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  max-width: 1920px;
+  font-family: "MuseoSansCyrl", "MuseoSansCyrl", "font", "sans-serif";
+  font-weight: 400;
+  background-image: url(./images/background.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+.body-img {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  max-width: 1168px;
+  margin: 0 auto;
+}
+
+/*---------2.Типовые елементы(END)--------*/
+/*---------3.HEADER(START)--------*/
+header {
+  margin-bottom: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.burger {
+  display: none;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  padding: 26px 16px 34px 23px;
+  /* border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2); */
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.logo-corner1 {
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 93%;
+  right: 98%;
+}
+
+.logo-corner2 {
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  bottom: 94%;
+  right: 98%;
+  transform: rotate(90deg);
+}
+
+.header-logo:before {
+  content: url(./images/угл1.png);
+  z-index: 1;
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 85%;
+  left: 96%;
+  transform: rotate(270deg);
+}
+
+.header-logo:after {
+  content: url(./images/угл1.png);
+  z-index: 1;
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 87%;
+  left: 96%;
+  transform: rotate(180deg);
+}
+.nav {
+  z-index: 1;
+}
+.nav__list {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  gap: 38px;
+}
+
+.nav__link {
+  padding-bottom: 7px;
+  font-family: "MuseoSansCyrl";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.nav__link:hover {
+  color: #b1b1b1;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+@media (max-width: 990px) {
+  .nav__list {
+    gap: 20px;
+  }
+
+  .header__container {
+    flex-direction: column;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container {
+    flex-direction: row;
+  }
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .burger__link {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    transform: translateX(-50%);
+  }
+
+  .burger__link:first-child {
+    top: 13px;
+  }
+  .burger__link:nth-child(3) {
+    bottom: 13px;
+  }
+  .burger__link:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .header-logo {
+    padding: 15px;
+  }
+
+  .logo-img {
+    width: 100px;
+  }
+
+  .header-logo:after{
+    left: 89%;
+    bottom: 72%;
+  }
+  .header-logo:before{
+    top: 70%;
+    left: 90%;
+  }
+
+  .logo-corner1{
+    top: 86%;
+    right: 95%;
+  }
+  .logo-corner2{
+    bottom: 86%;
+    right: 96%;
+  }
+}
+
+/*---------3.HEADER(END)--------*/
+/*---------4.HERO(START)--------*/
+.container__hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 190px 145px;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+}
+
+.info-element {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.755);
+  transition: 0.3s ease-in-out;
+}
+
+.info-element:nth-child(1) {
+  padding-right: 7px;
+}
+.info-element:nth-child(3) {
+  padding-right: 7px;
+}
+.info-element:nth-child(2) {
+  padding-left: 34px;
+}
+.info-element:nth-child(4) {
+  padding-left: 34px;
+}
+
+.info-element:nth-child(1) {
+  box-shadow: inset -30px -30px 30px 10px rgba(255, 255, 255, 0.03);
+}
+.info-element:nth-child(1):hover {
+  box-shadow: inset -30px -30px 30px 10px rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.info-element:nth-child(2) {
+  box-shadow: inset 30px -30px 30px 0px rgba(255, 255, 255, 0.03);
+}
+.info-element:nth-child(2):hover {
+  box-shadow: inset 30px -30px 30px 0px rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.info-element:nth-child(3) {
+  box-shadow: inset -30px 30px 30px 0px rgba(255, 255, 255, 0.03);
+}
+.info-element:nth-child(3):hover {
+  box-shadow: inset -30px 30px 30px 0px rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.info-element:nth-child(4) {
+  box-shadow: inset 30px 30px 30px 0px rgba(255, 255, 255, 0.03);
+}
+.info-element:nth-child(4):hover {
+  box-shadow: inset 30px 30px 30px 0px rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hero-title {
+  margin-bottom: 87px;
+  padding-top: 61px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 58px;
+  font-family: "MuseoSansCyrl";
+  color: #fff;
+  margin: 0;
+  background: #ffffff;
+  background: linear-gradient(to right, #ffffff 10%, #ff3f04 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-span {
+  line-height: 17px;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "MuseoSansCyrl";
+  background: #ffffff;
+  background: linear-gradient(to right, #ffffff 50%, #ff3f04 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-btn {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(
+    8deg,
+    #263e66 0%,
+    #09213d 40%,
+    #111f2d 60%,
+    #23599c 100%
+  );
+  -webkit-border-image: -webkit-linear-gradient(
+    8deg,
+    #263e66 0%,
+    #09213d 40%,
+    #111f2d 60%,
+    #23599c 100%
+  );
+  border-image: linear-gradient(
+    8deg,
+    #263e66 0%,
+    #09213d 40%,
+    #111f2d 60%,
+    #23599c 100%
+  );
+  border-image-slice: 1;
+  color: rgba(255, 255, 255, 0.555);
+  cursor: pointer;
+  padding: 7px 21px;
+  font-family: "MuseoSansCyrl";
+  font-size: 14px;
+}
+
+.hero-btn::before {
+  content: url(./images/угл2.png);
+  z-index: 1;
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 95%;
+  top: 75%;
+}
+
+.hero-btn::after {
+  content: url(./images/угл2.png);
+  z-index: 1;
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 76%;
+  left: 95%;
+  transform: rotate(180deg);
+}
+
+.info-span {
+  line-height: 5px;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.info-title {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 700;
+  font-family: "MuseoSansCyrl";
+}
+
+.info-span:nth-child(1) {
+  margin-bottom: 20px;
+  padding-top: 39px;
+}
+
+.helper-text {
+  font-family: "Museo100";
+  font-size: 22px;
+  margin: 0 1px;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.planet-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 389px;
+  height: 388px;
+  background-image: url(./images/planet.png);
+}
+
+@media only screen and (max-width: 800px) {
+  .container__hero {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info {
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    padding-top: 0px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .info {
+    display: grid;
+    grid-template-columns: 140px 140px;
+    margin-top: 5%;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
+/*---------4.HERO(END)--------*/
